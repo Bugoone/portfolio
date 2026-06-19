@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Frontend Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav-wrapper">
+    <nav class="nav container">
+      <a href="#hero" class="nav-logo">MJ<span class="accent">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <span class="theme-icon">☀️</span>
+      </button>
+      <button class="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Hi, I'm</p>
+        <h1 class="hero-name">Your Name<span class="accent">.</span></h1>
+        <h2 class="hero-title">Frontend Developer</h2>
+        <p class="hero-sub">
+          I build fast, accessible, and visually polished web experiences.
+          Passionate about clean code and great UX.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <span class="scroll-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-placeholder">
+            <span>📷</span>
+            <small>Your photo</small>
+          </div>
+        </div>
+        <div class="about-content">
+          <h2 class="section-title">About me</h2>
+          <p>
+            I'm a frontend developer with a passion for turning ideas into
+            pixel-perfect, performant interfaces. I love working at the
+            intersection of design and engineering — where craft meets
+            functionality.
+          </p>
+          <p>
+            When I'm not in the code I'm probably tinkering with side projects,
+            reading about web standards, or exploring design systems.
+          </p>
+          <a href="cv.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section-title centered">Skills</h2>
+        <p class="section-sub centered">Technologies and tools I work with</p>
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <ul>
+              <li><span class="skill-tag">HTML5</span></li>
+              <li><span class="skill-tag">CSS3</span></li>
+              <li><span class="skill-tag">JavaScript (ES2024)</span></li>
+              <li><span class="skill-tag">TypeScript</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Frameworks &amp; Libraries</h3>
+            <ul>
+              <li><span class="skill-tag">React</span></li>
+              <li><span class="skill-tag">Next.js</span></li>
+              <li><span class="skill-tag">Tailwind CSS</span></li>
+              <li><span class="skill-tag">Framer Motion</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tooling</h3>
+            <ul>
+              <li><span class="skill-tag">Git / GitHub</span></li>
+              <li><span class="skill-tag">Vite</span></li>
+              <li><span class="skill-tag">Figma</span></li>
+              <li><span class="skill-tag">VS Code</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Other</h3>
+            <ul>
+              <li><span class="skill-tag">REST APIs</span></li>
+              <li><span class="skill-tag">Web Accessibility</span></li>
+              <li><span class="skill-tag">Performance Optimisation</span></li>
+              <li><span class="skill-tag">Responsive Design</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title centered">Projects</h2>
+        <p class="section-sub centered">A selection of things I've built</p>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-icon">🛒</div>
+              <div class="project-links">
+                <a href="#" aria-label="View source code" title="Source code">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" aria-label="View live site" title="Live site">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>E-commerce Storefront</h3>
+            <p>A fully responsive online shop built with React and a headless CMS. Features cart management, animations, and optimised images.</p>
+            <div class="project-tags">
+              <span>React</span><span>TypeScript</span><span>CSS Modules</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-icon">📊</div>
+              <div class="project-links">
+                <a href="#" aria-label="View source code" title="Source code">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" aria-label="View live site" title="Live site">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Analytics Dashboard</h3>
+            <p>Real-time data visualisation dashboard with charts, filters, and dark mode. Consumes a REST API and updates live via WebSockets.</p>
+            <div class="project-tags">
+              <span>Next.js</span><span>Recharts</span><span>Tailwind</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-icon">🎨</div>
+              <div class="project-links">
+                <a href="#" aria-label="View source code" title="Source code">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" aria-label="View live site" title="Live site">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Design System</h3>
+            <p>A component library and design system built from scratch, documented with Storybook. Covers tokens, patterns, and accessibility guidelines.</p>
+            <div class="project-tags">
+              <span>React</span><span>Storybook</span><span>Figma</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact-inner">
+        <h2 class="section-title centered">Get in touch</h2>
+        <p class="section-sub centered">
+          Open to frontend roles. Feel free to reach out — I'd love to chat.
+        </p>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Hi, I'd love to talk about..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send message</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-links">
+          <a href="mailto:maj@wamai.co.uk" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            maj@wamai.co.uk
+          </a>
+          <a href="https://github.com/Bugoone" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            github.com/Bugoone
+          </a>
+          <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by <strong>Your Name</strong> · 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
