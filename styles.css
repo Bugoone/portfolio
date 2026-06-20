@@ -277,12 +277,11 @@ body {
 .about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
 .about-grid {
-  max-width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 .about-content { display: flex; flex-direction: column; gap: 1rem; }
-
-.about-content h2 { margin-bottom: 0.5rem; }
 
 /* ── Skills ──────────────────────────────────────────────── */
 .skills-grid {
