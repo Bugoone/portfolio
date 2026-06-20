@@ -1,32 +1,36 @@
 /* ── Theme toggle ────────────────────────────────────────── */
-const themeBtn = document.querySelector('.theme-toggle');
+const themeBtn  = document.querySelector('.theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 
 const saved = localStorage.getItem('theme') || 'dark';
 applyTheme(saved);
 
-themeBtn.addEventListener('click', () => {
-  const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-  applyTheme(next);
-  localStorage.setItem('theme', next);
-});
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+}
 
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+  if (themeIcon) themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
 /* ── Mobile nav ──────────────────────────────────────────── */
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks  = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+}
 
 /* ── Active nav link on scroll ───────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
@@ -49,10 +53,12 @@ document.querySelectorAll(
   '.skill-category, .project-card, .about-grid, .contact-form, .contact-links'
 ).forEach(el => el.classList.add('reveal'));
 
+let revealIndex = 0;
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      setTimeout(() => entry.target.classList.add('visible'), revealIndex * 80);
+      revealIndex++;
       revealObserver.unobserve(entry.target);
     }
   });
@@ -64,31 +70,46 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 const form   = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+if (form && status) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
 
-  const data = Object.fromEntries(new FormData(form));
+    const data = Object.fromEntries(new FormData(form));
 
-  if (!data.name.trim() || !data.email.trim() || !data.message.trim()) {
-    status.textContent = 'Please fill in all fields.';
-    status.style.color = '#e87070';
-    return;
-  }
+    if (!data.name.trim() || !data.email.trim() || !data.message.trim()) {
+      status.textContent = 'Please fill in all fields.';
+      status.style.color = '#e87070';
+      return;
+    }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    status.textContent = 'Please enter a valid email address.';
-    status.style.color = '#e87070';
-    return;
-  }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = '#e87070';
+      return;
+    }
 
-  /* Replace this block with a real form service (e.g. Formspree, EmailJS) */
-  status.textContent = 'Sending…';
-  status.style.color = 'var(--muted)';
+    status.textContent = 'Sending…';
+    status.style.color = 'var(--muted)';
 
-  setTimeout(() => {
-    form.reset();
-    status.textContent = 'Message sent! I\'ll get back to you soon.';
-    status.style.color = 'var(--accent)';
-    setTimeout(() => { status.textContent = ''; }, 5000);
-  }, 800);
-});
+    fetch('https://formspree.io/f/meebjjor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => {
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Message sent! I\'ll get back to you soon.';
+        status.style.color = 'var(--accent)';
+        setTimeout(() => { status.textContent = ''; }, 5000);
+      } else {
+        status.textContent = 'Something went wrong. Please email me directly.';
+        status.style.color = '#e87070';
+      }
+    })
+    .catch(() => {
+      status.textContent = 'Something went wrong. Please email me directly.';
+      status.style.color = '#e87070';
+    });
+  });
+}
