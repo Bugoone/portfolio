@@ -53,14 +53,11 @@ document.querySelectorAll(
   '.skill-category, .project-card, .about-grid, .contact-form, .contact-links'
 ).forEach(el => el.classList.add('reveal'));
 
-let revealIndex = 0;
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), revealIndex * 80);
-      revealIndex++;
-      revealObserver.unobserve(entry.target);
-    }
+  const visible = entries.filter(e => e.isIntersecting);
+  visible.forEach((entry, i) => {
+    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    revealObserver.unobserve(entry.target);
   });
 }, { threshold: 0.12 });
 
